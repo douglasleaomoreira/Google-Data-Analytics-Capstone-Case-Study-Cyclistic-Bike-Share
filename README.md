@@ -55,6 +55,7 @@ Data Sources Used: Two .csv files containing bike ride data for Q1 of 2019 and 2
 
 ## Analysis Methodology
 - **Google Data Analytics Phases**
+
 This study uses the Google Data Analytics process as a framework for analysis. This approach involves six key phases that provide a method for extracting insights and value from data. 
 The six steps in Google Data Analytics are: Ask, Prepare, Process, Analyse, Share, and Act.
 
@@ -64,6 +65,7 @@ The six steps in Google Data Analytics are: Ask, Prepare, Process, Analyse, Shar
 
 ## Ask
 The insights gathered will support data-driven decisions, helping the business identify key usage patterns between casual and annual members. With this knowledge, Cyclistic can strengthen strategies to retain annual members and develop targeted campaigns to convert casual riders into loyal members, boosting profitability and improving operational efficiency.
+
 
 ## Prepare
 ### Data Collection and Preparation
@@ -81,13 +83,16 @@ Several discrepancies were found between the datasets, including:
 The *conflicted* package in R helps resolve function name conflicts that arise when multiple packages (like *stats*, *dplyr*, or *MASS*) contain functions with the same names, such as *filter*, *select*, or *lag*. By requiring users to explicitly specify which version of a function to use in the event of a conflict, “conflicted” ensures code clarity, robustness, and reproducibility.
 The lines conflict_prefer(*filter*, *dplyr*) and conflict_prefer(*lag*, *dplyr*) instruct R to always use the *dplyr* versions of *filter()* and *lag()* in case of naming conflicts. This is important because functions like *filter()* and *lag()* also exist in the stats package, where they serve different purposes – such as signal processing – potentially leading to confusion or errors in data manipulation tasks.
 
+
 ### Data Integration
 The integration stage, part of the wider data wrangling process, began after loading both CSV files into RStudio. The datasets were first compared to check consistency in variables and labels (columns), then merged into a single dataset. This consolidation will simplify the following cleaning and manipulation steps.
+
 
 ### Data Filtering & Selection
 Initial data verification was conducted using functions such as *colnames()*, *str()*, and *summary()*. Column names and variable labels were standardised across both datasets to ensure consistency.
 
 ![A chart or diagram of the analysis](images/Picture3.png)
+
 
 ### Data Transformation
 Given the high granularity of the timestamp fields, date and time formats were adjusted, and additional columns were generated to extract specific time units (e.g., day, month, and year).
@@ -97,11 +102,13 @@ Data will be checked for missing values and duplicates in a later phase of the p
 ![A chart or diagram of the analysis](images/Picture4.png)
 ![A chart or diagram of the analysis](images/Picture5.png)
 
+
 ### Data Cleaning
 Data cleaning is a best practice that applies throughout all phases of this project. Consistency adjustments have been made to maintain the integrity of the data used in this study. Functions such as *trim()*, *rename()*, and *mutate()* have been used to standardise, rename, and convert data types.
 At this stage, a thorough cleanup is underway to identify duplicates, check for missing values, and remove invalid data, specifically by addressing negative values in the *ride_length* field.
 
 ![A chart or diagram of the analysis](images/Picture6.png)
+
 
 ## Analyse
 The analysis stage applies various techniques to uncover insights and trends from the data. The main goal is to understand why casual riders do not convert to annual subscribers and to identify strategies to support the business and help the Marketing team gain more subscribed members.
@@ -110,25 +117,31 @@ After the Ask, Prepare, and Process phases, the data is ready for manipulation. 
 
 ### Preliminary Analysis Using Excel
 A pivot table and corresponding chart were created to identify the top 5% of origin stations by number of trips in 2019, filtered by user type. The data were grouped by origin station and gender, with blank entries for gender excluded from the analysis. Findings from the 2019 dataset indicate a significant gender disparity among users: male riders accounted for approximately 81% of all trips, while female riders represented only 19%.
+
 *List of top 5% stations by trip count and user gender for the year of 2019*
 
 ![A chart or diagram of the analysis](images/Picture7.png)
+
 
 *Top 5% stations by trip count and user gender for the year of 2019*
 
 ![A chart or diagram of the analysis](images/Picture8.png)
 
+
 *Total trips by gender for the year of 2019*
 
 ![A chart or diagram of the analysis](images/Picture9.png)
+
 
 *Average ride length, Max ride length, Mode, and Total Trips ride length for the year of 2019*
 
 ![A chart or diagram of the analysis](images/Picture10.png)
 
+
 *Average ride length, Max ride length, Mode, and Total Trips ride length for the year of 2020 (min_ride_lenght likely to be an invalid value)*
 
 ![A chart or diagram of the analysis](images/Picture11.png)
+
 
 ### Data Analysis and Visualisation Using RStudio
 A basic statistical analysis was performed in R to assess average ride times across different time periods and compare usage patterns between members and casual users.
@@ -142,13 +155,16 @@ The *lubridate* package was used to properly format date and time fields, ensuri
 ![A chart or diagram of the analysis](images/Picture17.png)
 ![A chart or diagram of the analysis](images/Picture18.png)
 
+
 *Number of rides by member type*
 
 ![A chart or diagram of the analysis](images/Picture19.png)
 
+
 *Trip average duration per day of the week*
 
 ![A chart or diagram of the analysis](images/Picture20.png)
+
 
 ### Data Validation
 The data in the final dataset, all_trips_v2, has been checked for integrity, consistency, accuracy, and readiness for analysis.
@@ -157,8 +173,10 @@ The data in the final dataset, all_trips_v2, has been checked for integrity, con
 
 *Refer to Data Analysis using SQL*
 
+
 Two files were exported from RStudio to support further analysis: avg_ride_length.csv, which contains trip duration by member type and day of the week; and all_trips_v3.csv, which includes all cleaned and consolidated data from 2019 and 2020.
 Next, the dataset will be uploaded to Google Colab for additional manipulation, then integrated into Google BigQuery for advanced analysis. Insights from this process will inform data visualisation in Tableau, allowing a clearer understanding of user behaviour.
+
 
 ### Data Manipulation Using Python (Google Colab)
 
@@ -169,40 +187,42 @@ Next, the dataset will be uploaded to Google Colab for additional manipulation, 
 *Create the DataFrame and verify its structure*
 
 ![A chart or diagram of the analysis](images/Picture23.png)
+![A chart or diagram of the analysis](images/Picture24.png)
 
 *Examine basic statistics and metadata of the DataFrame*
 
-![A chart or diagram of the analysis](images/Picture24.png)
+![A chart or diagram of the analysis](images/Picture25.png)
 
 *Convert the start_at column to datetime format; extract day, month, and year into new columns, and verify the changes*
 
-![A chart or diagram of the analysis](images/Picture25.png)
 ![A chart or diagram of the analysis](images/Picture26.png)
 ![A chart or diagram of the analysis](images/Picture27.png)
 ![A chart or diagram of the analysis](images/Picture28.png)
+![A chart or diagram of the analysis](images/Picture29.png)
 
 *Remove unnecessary columns and confirm the updated structure*
 
-![A chart or diagram of the analysis](images/Picture29.png)
 ![A chart or diagram of the analysis](images/Picture30.png) 
+![A chart or diagram of the analysis](images/Picture31.png)
 
 *Check for and remove any duplicate records*
 
-![A chart or diagram of the analysis](images/Picture31.png)
 ![A chart or diagram of the analysis](images/Picture32.png)
+![A chart or diagram of the analysis](images/Picture33.png)
 
 *Identify and handle missing values*
 
-![A chart or diagram of the analysis](images/Picture33.png)
 ![A chart or diagram of the analysis](images/Picture34.png)
 ![A chart or diagram of the analysis](images/Picture35.png)
+![A chart or diagram of the analysis](images/Picture36.png)
 
 *Filter and save separate datasets for each year: trips_2019_v3.csv and trips_2020_v3.csv*
 
-![A chart or diagram of the analysis](images/Picture36.png)
 ![A chart or diagram of the analysis](images/Picture37.png)
 ![A chart or diagram of the analysis](images/Picture38.png)
 ![A chart or diagram of the analysis](images/Picture39.png)
+![A chart or diagram of the analysis](images/Picture40.png)
+
 
 ### Data Analysis Using SQL (Google BigQuery)
 
@@ -210,34 +230,34 @@ The dataset has been loaded into Google BigQuery, and a corresponding dataframe 
 
 *Preliminary steps included preparing and previewing the data, generating a primary key *ride_id*, and adjusting data formats to ensure compatibility prior to joining the tables.*
 
-![A chart or diagram of the analysis](images/Picture40.png)
-
-*The datasets were merged using the UNION ALL operation, resulting in a unified table that consolidates all records*
-
 ![A chart or diagram of the analysis](images/Picture41.png)
 ![A chart or diagram of the analysis](images/Picture42.png)
 
-*Check data structure*
+*The datasets were merged using the UNION ALL operation, resulting in a unified table that consolidates all records*
 
 ![A chart or diagram of the analysis](images/Picture43.png) 
+
+*Check data structure*
+
 ![A chart or diagram of the analysis](images/Picture44.png)
+![A chart or diagram of the analysis](images/Picture45.png)
 
 *Check metadata, data information, and data statistics*
 
-![A chart or diagram of the analysis](images/Picture45.png)
 ![A chart or diagram of the analysis](images/Picture46.png)
 ![A chart or diagram of the analysis](images/Picture47.png)
 ![A chart or diagram of the analysis](images/Picture48.png)
 ![A chart or diagram of the analysis](images/Picture49.png)
 ![A chart or diagram of the analysis](images/Picture50.png)
 ![A chart or diagram of the analysis](images/Picture51.png)
+![A chart or diagram of the analysis](images/Picture52.png)
 
 *Data cleaning*
 
-![A chart or diagram of the analysis](images/Picture52.png)
 ![A chart or diagram of the analysis](images/Picture53.png)
 ![A chart or diagram of the analysis](images/Picture54.png)
 ![A chart or diagram of the analysis](images/Picture55.png)
+![A chart or diagram of the analysis](images/Picture55a.png)
 ![A chart or diagram of the analysis](images/Picture56.png)
 ![A chart or diagram of the analysis](images/Picture57.png)
 ![A chart or diagram of the analysis](images/Picture58.png)
@@ -250,7 +270,7 @@ The dataset has been loaded into Google BigQuery, and a corresponding dataframe 
 ![A chart or diagram of the analysis](images/Picture62.png)
 ![A chart or diagram of the analysis](images/Picture63.png)
 
-Tables created
+*Tables created*
 
 ![A chart or diagram of the analysis](images/Picture64.png)
 
