@@ -1,4 +1,4 @@
-8. Data Validation.sql
+-- 8. Data Validation.sql
 
 -- ========================================================================
 -- Section 3. Check data structure
@@ -189,5 +189,6 @@ SELECT
   -- member_casual
   COUNTIF(TRIM(member_casual) != member_casual) AS values_needing_trim_member_casual,
   COUNTIF(TRIM(member_casual) = member_casual) AS already_trimmed_member_casual
+
 
 FROM `my-project-sandbox-464408.bike_trips.all_trips`;
