@@ -1,3 +1,5 @@
+# 2. Data Cleaning.R
+
 #======================================================
 # STEP 3: CLEAN UP AND ADD DATA TO PREPARE FOR ANALYSIS
 #======================================================
@@ -107,4 +109,5 @@ sum(is.na(all_trips_v2))
 colSums(is.na(all_trips_v2))
 
 # Show rows that contain any missing values
+
 all_trips_v2[!complete.cases(all_trips_v2), ]
