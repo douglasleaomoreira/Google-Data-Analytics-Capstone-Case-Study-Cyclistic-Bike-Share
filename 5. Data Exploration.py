@@ -1,4 +1,4 @@
-5. Data Exploration.py
+# 5. Data Exploration.py
 
 from google.colab import files
 uploaded = files.upload()
@@ -71,4 +71,5 @@ files.download("trips_2019_v3.csv")
 files.download("trips_2020_v3.csv")
 
 print("2019 rows:", len(df_2019))
+
 print("2020 rows:", len(df_2020))
