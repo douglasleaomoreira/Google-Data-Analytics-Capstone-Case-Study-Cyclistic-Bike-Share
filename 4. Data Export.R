@@ -1,3 +1,5 @@
+# Data Export.R
+
 #=================================================
 # STEP 5: EXPORT SUMMARY FILE FOR FURTHER ANALYSIS
 #=================================================
@@ -36,4 +38,5 @@ head(all_trips_v2[, c("started_at", "date", "year", "month", "day")])
 str(all_trips_v2)
 
 # Export all trips dataframe
+
 write.csv(all_trips_v2, file = 'all_trips_v3.csv')
