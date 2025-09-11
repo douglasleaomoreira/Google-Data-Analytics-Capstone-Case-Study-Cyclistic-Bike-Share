@@ -1,3 +1,5 @@
+# 1. Data Preparation.R
+
 library(tidyverse)  #helps wrangle data
 # Use the conflicted package to manage conflicts
 library(conflicted)
@@ -54,4 +56,5 @@ all_trips <- bind_rows(q1_2019, q1_2020)#, q3_2019)#, q4_2019, q1_2020)
 # beginning in 2020
 all_trips <- all_trips %>%  
   select(-c(start_lat, start_lng, end_lat, end_lng, birthyear, gender,  
+
             "tripduration"))
