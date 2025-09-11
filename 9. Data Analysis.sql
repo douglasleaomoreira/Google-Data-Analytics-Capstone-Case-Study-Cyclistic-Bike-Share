@@ -1,4 +1,4 @@
-9. Data Analysis.sql
+-- 9. Data Analysis.sql
 
 -- ========================================================================
 -- Section 6. Filter, sort, and group data
@@ -49,4 +49,5 @@ WHERE
 GROUP BY
   member_casual
 ORDER BY
+
   avg_ride_length DESC;
