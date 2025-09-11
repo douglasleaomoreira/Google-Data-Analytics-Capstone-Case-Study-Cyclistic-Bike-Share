@@ -1,3 +1,5 @@
+# 3. Data Analysis.R
+
 #=====================================
 # STEP 4: CONDUCT DESCRIPTIVE ANALYSIS
 #=====================================
@@ -89,4 +91,5 @@ all_trips_v2 <- all_trips %>%
   filter(!is.na(ride_length) & ride_length >= 0 & start_station_name != "HQ QR")
 
 # Confirm structure
+
 str(all_trips_v2)
