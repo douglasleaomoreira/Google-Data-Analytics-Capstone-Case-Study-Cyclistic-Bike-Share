@@ -1,4 +1,4 @@
-6. Data Combination.sql
+-- 6. Data Combination.sql
 
 -- ========================================================================
 -- Section 1. Prepare and preview data
@@ -57,4 +57,5 @@ FROM `my-project-sandbox-464408.bike_trips.trips_2019_v3_indexed`
 UNION ALL
 
 SELECT *
+
 FROM `my-project-sandbox-464408.bike_trips.trips_2020_v3_indexed`;
