@@ -1,4 +1,4 @@
-7. Data Manipulation.sql
+-- 7. Data Manipulation.sql
 
 -- Standardization and cleaning data
 CREATE OR REPLACE TABLE `my-project-sandbox-464408.bike_trips.all_trips_cleaned` AS
@@ -18,4 +18,5 @@ SELECT
   month,
   day,
   year
+
 FROM `my-project-sandbox-464408.bike_trips.all_trips`;
